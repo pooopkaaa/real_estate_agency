@@ -6,7 +6,7 @@ from .models import Owner
 
 
 class FlatAdmin(admin.ModelAdmin):
-    search_fields = ['town', 'address']
+    search_fields = ['owner', 'town', 'address']
     readonly_fields = ['created_at']
     list_display = ['owners_phonenumber', 'owner_pure_phone', 'address', 'price', 'new_building', 'construction_year', 'town']
     list_editable = ['new_building']
@@ -20,6 +20,7 @@ class ComplaintAdmin(admin.ModelAdmin):
 
 class OwnerAdmin(admin.ModelAdmin):
     raw_id_fields = ['property_flats']
+    search_fields = ['owner']
 
 
 admin.site.register(Flat, FlatAdmin)
