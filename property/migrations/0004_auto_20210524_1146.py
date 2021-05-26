@@ -18,6 +18,3 @@ class Migration(migrations.Migration):
     operations = [
         migrations.RunPython(fill_field_new_building),
     ]
-
-
-    
