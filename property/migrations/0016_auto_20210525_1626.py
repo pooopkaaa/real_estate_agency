@@ -8,7 +8,6 @@ def fill_fiel_property_flats(apps, schema_editor):
     Owner = apps.get_model('property', 'Owner')
 
     for owner in Owner.objects.all():
-        print(owner)
         owner.property_flats.set(Flat.objects.filter(owner=owner.owner))
 
 

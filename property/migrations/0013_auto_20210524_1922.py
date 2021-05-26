@@ -3,22 +3,10 @@
 from django.db import migrations
 
 
-def fill_fiel_property_flats(apps, schema_editor):
-    Flat = apps.get_model('property', 'Flat')
-    Owner = apps.get_model('property', 'Owner')
-
-    for owner in Owner.objects.all()[:1]:
-        owner_flats = Flat.objects.filter(owner=owner.owner)
-        print(owner_flats)
-        # owner.property_flats.add(owner_flats)
-
-
 class Migration(migrations.Migration):
 
     dependencies = [
         ('property', '0012_auto_20210524_1922'),
     ]
 
-    operations = [
-        migrations.RunPython(fill_fiel_property_flats)
-    ]
+    operations = []
